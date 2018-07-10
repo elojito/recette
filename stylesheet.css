@@ -1,0 +1,168 @@
+/*Global*/
+
+html {
+    width: 1280px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.left {
+    float: left;
+    width: 47%;
+    margin-left: 10%;
+    margin-top: 2.5em;
+}
+
+.right {
+    float: left;
+    width: 50%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.conteneur {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+img {
+    width: 24px;
+}
+
+
+/*NAVIGATION*/
+
+#wrap {
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+#wrap ul {
+    padding: 0.5em;
+    background-color: #517D7C;
+    border: 1px solid white;
+}
+
+#wrap li {
+    display: inline-block;
+}
+
+#wrap a {
+    color: black;
+    width: 250px;
+    padding-left: 0.5em;
+    padding-right: 2.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+#frontP a{
+    color: black;
+}
+/*FORMULAIRE*/
+
+form {
+    background-color: #517D7C;
+    padding: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    border-radius: 4%;
+    text-align: center;
+}
+
+#formAdd{
+    width: 60%;
+}
+fieldset {
+    padding: 2em;
+    color: white;
+}
+
+form li {
+    margin-bottom: 0.5em;
+    text-align: left;
+    margin-left: 5%;
+}
+
+form label {
+    display: block;
+    width: 130px;
+    float: left;
+    color: white;
+}
+
+form .ingline label{
+    display: inline;
+    width: 70px;
+    float: none;
+}
+
+form input, select {
+    color: black;
+    text-align: left;
+    width: 100px;
+}
+
+form .ingline label input{
+    width: 30px;
+}
+
+form .ingline .inglong{
+    width: 100px;
+}
+input:-moz-read-only {
+    background-color: lightgray;
+}
+
+input:read-only {
+    background-color: lightgray;
+}
+
+form li:last-of-type {
+    text-align: center;
+    margin-top: 1em;
+}
+
+/*AFFICHAGE BDD*/
+
+th,
+td {
+    text-align: center;
+}
+
+td,
+th {
+    padding: 0.3em;
+}
+
+tr:nth-child(even) {
+    background-color: lightgray;
+    color: black;
+}
+
+tr:nth-child(odd) {
+    background-color: beige;
+    color: black;
+}
+th{
+    background-color: #517D7C;
+    color: white;
+}
+.top {
+    background-color:darkslategrey;
+    color: white;
+}
