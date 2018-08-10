@@ -2,13 +2,14 @@
                foreach ($liste as $element) {
                    $id  = $element->idFiche;
                    $nom = $element->nomFiche;
+                   $idcat = $element->catFiche;
                    $info = $element->descriptif;
                    $imageFiche = $element->imageFiche;
                    
                    echo "<div class='col-sm-4 col-xs-12'>
                     <figure><figcaption>
                     <h4>
-                    <a href='recette.php?id=$id&nom=$nom'>
+                    <a href='recette.php?id=$id&nom=$nom&cat=$idcat'>
                         ".ucwords($nom)."
                     </a>
                     </h4>
@@ -33,7 +34,7 @@
                    
                    echo "<div class='overlay'>
                             <div class='buttons'>
-                                <a rel='gallery' class='fancybox' href='recette.php?id=$id&nom=$nom' style='margin-left: 45%;'>".ucwords($nom)."</a>
+                                <a rel='gallery' class='fancybox' href='recette.php?id=$id&nom=$nom&cat=$idcat' style='margin-left: 45%;'>".ucwords($nom)."</a>
                             </div>
                         </div>
                     </div>

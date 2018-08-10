@@ -82,10 +82,10 @@ if($row['idFiche'] !=0){
 else{
     $requete = $connexion->prepare("INSERT INTO fiche (nomFiche, descriptif, ing, catFiche, modop, imageFiche) VALUES (:nomFiche, :descriptif, :ing, :catFiche, :modop, :imageFiche)");
     $requete->bindParam(':nomFiche', $nomFiche);
-    $requete->bindParam(':descriptif', $descriptif);
-    $requete->bindParam(':ing', $ing);
+    $requete->bindParam(':descriptif', trim($descriptif));
+    $requete->bindParam(':ing', trim($ing));
     $requete->bindParam(':catFiche', $idCat);
-    $requete->bindParam(':modop', $modop);
+    $requete->bindParam(':modop', trim($modop));
     $requete->bindParam(':imageFiche', $idImg); 
     
     $nomFiche = $_POST["nomFiche"];

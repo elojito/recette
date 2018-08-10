@@ -6,6 +6,7 @@
         <?php 
         $id = $_GET["id"];
         $nom = $_GET["nom"]; 
+        $idcat = $_GET["cat"]; 
 ?>
    
               <section class="global-page-header">
@@ -37,14 +38,23 @@
                                             <input type="text" value="<?php echo ucwords($nom) ?>" class="form-control" name="nomFiche" id="nomFiche" readonly> </div>
                                         <div class="form-group">
                                             <select class="form-control" id="cat" name="cat">
-                                                <option selected="selected"> Catégorie </option>
+                                               <?php 
+                                                $requete = "SELECT nomCat FROM category WHERE idCat = $idcat";
+                                                $resultat = $connexion->query($requete);
+                                                $liste = $resultat->fetchAll(PDO::FETCH_ASSOC);
+                                                foreach($liste as $element){
+                                                    $nom = $element["nomCat"];
+                                                }
+                                                ?>
+                                                <option> Catégorie </option>
                                                 <?php
                                                 $requete  = "SELECT * FROM category";
                                                 $resultat = $connexion->query($requete);
                                                 $liste    = $resultat->fetchAll(PDO::FETCH_ASSOC);
 
                                                 foreach ($liste as $element) {
-                                                    echo "<option>";
+                                                    if($element["nomCat"] == $nom){echo "<option selected>";}
+                                                    else{echo "<option>";}
                                                     echo $element["nomCat"];
                                                     echo "</option>";
                                                 }

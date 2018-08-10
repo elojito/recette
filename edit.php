@@ -13,10 +13,10 @@ $requete = $connexion->prepare("UPDATE fiche SET descriptif = :descriptif, ing =
                                     WHERE nomFiche = :nom");
 
     $requete->bindParam(':nom',$nom);
-    $requete->bindParam(':descriptif', $descriptif);
-    $requete->bindParam(':ing', $ing);
+    $requete->bindParam(':descriptif', trim($descriptif));
+    $requete->bindParam(':ing', trim($ing));
     $requete->bindParam(':catFiche', $idCat);
-    $requete->bindParam(':modop', $modop);
+    $requete->bindParam(':modop', trim($modop));
     
     $nom = $_POST["nomFiche"];
     $descriptif = $_POST["descriptif"];
