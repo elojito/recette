@@ -46,103 +46,13 @@
                                                 ?>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                       <div class="form-group">
                                             <input class="form-control" id="descriptif" name="descriptif" placeholder="Descriptif" /> </div>
-                                        <div class="form-group">
-                                            <input id="ingr" name="ingr" class="form-control" placeholder="Ingrédient" />
-                                            <input id="qu" name="qu" placeholder="Quantité" class="form-control" />
-                                            <select class="form-control" id="mes" name="mes">
-                                                <option selected="selected">mesure</option>
-                                                <?php
-                                                $requete  = "SELECT * FROM mesure";
-                                                $resultat = $connexion->query($requete);
-                                                $liste    = $resultat->fetchAll(PDO::FETCH_ASSOC);
-
-                                                foreach ($liste as $element) {
-                                                    echo "<option>";
-                                                    echo $element["nomMesure"];
-                                                    echo "</option>";
-                                                }
-                                                ?>
-                                            </select>
-                                            <!--  <button type="button" value="Ajouter" onclick="addI();">Ajouter</button>-->
-                                        </div>
-                                        <div class="form-grou">
-                                            <input id="ingr2" name="ingr2" class="form-control" placeholder="Ingrédient" />
-                                            <input id="qu2" name="qu2" placeholder="Quantité" class="form-control" />
-                                            <select class="form-control" id="mes2" name="mes2">
-                                                <option selected="selected">mesure</option>
-                                                <?php
-                                $requete  = "SELECT * FROM mesure";
-                                $resultat = $connexion->query($requete);
-                                $liste    = $resultat->fetchAll(PDO::FETCH_ASSOC);
-
-                                foreach ($liste as $element) {
-                                echo "<option>";
-                                echo $element["nomMesure"];
-                                echo "</option>";
-                                }
-                                ?>
-                                            </select>
-                                            <!--  <button type="button" value="Ajouter" onclick="addI();">Ajouter</button>-->
-                                        </div>
-                                        <div class="form-group">
-                                            <input id="ingr3" name="ingr3" class="form-control" placeholder="Ingrédient" />
-                                            <input id="qu3" name="qu3" placeholder="Quantité" class="form-control" />
-                                            <select class="form-control" id="mes3" name="mes3">
-                                                <option selected="selected">mesure</option>
-                                                <?php
-                                $requete  = "SELECT * FROM mesure";
-                                $resultat = $connexion->query($requete);
-                                $liste    = $resultat->fetchAll(PDO::FETCH_ASSOC);
-
-                                foreach ($liste as $element) {
-                                echo "<option>";
-                                echo $element["nomMesure"];
-                                echo "</option>";
-                                }
-                                ?>
-                                            </select>
-                                            <!--  <button type="button" value="Ajouter" onclick="addI();">Ajouter</button>-->
-                                        </div>
-                                        <div class="form-group">
-                                            <input id="ingr4" name="ingr4" class="form-control" placeholder="Ingrédient" />
-                                            <input id="qu4" name="qu4" placeholder="Quantité" class="form-control" />
-                                            <select class="form-control" id="mes4" name="mes4">
-                                                <option selected="selected">mesure</option>
-                                                <?php
-                                $requete  = "SELECT * FROM mesure";
-                                $resultat = $connexion->query($requete);
-                                $liste    = $resultat->fetchAll(PDO::FETCH_ASSOC);
-
-                                foreach ($liste as $element) {
-                                echo "<option>";
-                                echo $element["nomMesure"];
-                                echo "</option>";
-                                }
-                                ?>
-                                            </select>
-                                            <!--  <button type="button" value="Ajouter" onclick="addI();">Ajouter</button>-->
-                                        </div>
-                                        <div class="form-group">
-                                            <input id="ingr5" name="ingr5" class="form-control" placeholder="Ingrédient" />
-                                            <input id="qu5" name="qu5" placeholder="Quantité" class="form-control" />
-                                            <select class="form-control" id="mes5" name="mes5">
-                                                <option selected="selected">mesure</option>
-                                                <?php
-                                $requete  = "SELECT * FROM mesure";
-                                $resultat = $connexion->query($requete);
-                                $liste    = $resultat->fetchAll(PDO::FETCH_ASSOC);
-
-                                foreach ($liste as $element) {
-                                echo "<option>";
-                                echo $element["nomMesure"];
-                                echo "</option>";
-                                }
-                                ?>
-                                            </select>
-                                            <!--  <button type="button" value="Ajouter" onclick="addI();">Ajouter</button>-->
-                                        </div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="ing" name="ing" placeholder="Ingrédients" rows="6"></textarea>
+                                            </div>
+                                        </div>    
                                         <div class="row">
                                             <div class="form-group">
                                                 <textarea class="form-control" id="modop" name="modop" placeholder="Mode Opératoire" rows="6"></textarea>

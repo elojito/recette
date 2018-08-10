@@ -56,18 +56,12 @@
                                     <h3 class="subtitle">Ingrédients</h3>
                                     <p>
                                         <?php
-                        $requete = "SELECT * FROM recette
-                INNER JOIN ingredients ON recette.ingredients = ingredients.idIng
-                INNER JOIN mesure ON recette.mesureIng = mesure.idMes
-                WHERE  idRecette = $id";
-    
-    $resultat = $connexion->query($requete);
-    $liste = $resultat->fetchAll(PDO::FETCH_OBJ);
-                        foreach ($liste as $element) {
-                            echo "-- ".$element->nomIng." ";
-                            echo $element->quantite;
-                            echo $element->nomMesure."<br>";
-                        }?>
+                            $requete= "SELECT ing FROM fiche WHERE idFiche = $id";
+                            $resultat = $connexion->query($requete);
+                            $liste = $resultat->fetchAll(PDO::FETCH_OBJ);
+                            foreach ($liste as $element){
+                            echo $element->ing;
+        }?>
                                     </p>
                                     <h3>Mode Opératoire</h3>
                                     <p>
