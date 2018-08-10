@@ -6,6 +6,8 @@
         <?php 
         $id = $_GET["id"];
         $nom = $_GET["nom"]; 
+        $idcat = $_GET["cat"]; 
+$imgNom = $_GET["img"];
 ?>
    
               <section class="global-page-header">
@@ -32,7 +34,7 @@
                         <div class="col-md-offset-3 col-md-6">
                             <div class="block">
                                 <div class="contact-form" style="margin-top:-4em;">
-                                    <form id="contact-form" role="form" method="post" action="updateImg.php" enctype="multipart/form-data">
+                                    <form id="contact-form" role="form" method="post" action=<?php echo "'updateImg.php?nom=$nom&id=$id&cat=$idcat&img=$imgNom'" ?> enctype="multipart/form-data">
                                         <div class="form-group">
                                             <input type="text" value="<?php echo ucwords($nom) ?>" class="form-control" name="nomFiche" id="nomFiche" readonly> </div>
                                    <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />

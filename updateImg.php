@@ -8,6 +8,10 @@
 //$extension_upload = strtolower(  substr(  strrchr($_FILES['upimg']['name'], '.')  ,1)  );
 //if ( !in_array($extension_upload,$extensions_valides) ) echo "Extension incorrecte";
 
+ $id = $_GET["id"];
+ $nom = $_GET["nom"];
+ $idcat = $_GET["cat"];
+$imgNom = $_GET["img"];
 
 $uploaddir = 'ups/';
 $file = $_FILES['upimg']['name'];
@@ -69,7 +73,7 @@ else{
     ?>
     <script type="text/javascript">
         alert ("Image modifiée");
-        window.setTimeout("location=('index.php');",1000)</script>;
+        window.setTimeout("location=(<?php echo  "'recette.php?nom=$nom&id=$id&cat=$idcat'"; ?>);",1000)</script>;
     <?php exit; }
 }
 else{
@@ -132,7 +136,7 @@ else{
     ?>
     <script type="text/javascript">
         alert ("Image modifiée");
-        window.setTimeout("location=('index.php');",1000)</script>;
+        window.setTimeout("location=(<?php echo  "'recette.php?nom=$nom&id=$id&cat=$idcat'"; ?>);",1000)</script>;
     <?php exit; }
     }}
     

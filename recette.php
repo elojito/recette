@@ -40,6 +40,7 @@
                                     }
                                 if(!$imageFiche){
                                     echo "<img src='images/fiche-no-image.jpg' class='img-responsive' alt='' >";
+                                    $imgNom = "no-image.jpg";
                                 }
                                 else{
                                     $requete = "SELECT nom FROM image 
@@ -52,9 +53,13 @@
                                     echo "<img src='ups/".$imgNom."' class='img-responsive' alt='' >";
                                 }
                                 ?>
-                                    <div id="editImage">
-                                        <?php echo  "<a href='editImg.php?nom=$nom&id=$id'>"; ?>
+                                    <div>
+                                        <?php echo  "<a href='editImg.php?nom=$nom&id=$id&cat=$idcat&img=$imgNom'>"; ?>
                                             <input type='submit' class='btn btn-default btn-send' value='Editer Image'>
+                                            
+                                        <?php echo "</a>"; ?>
+                                        <?php echo  "<a href='deleteImg.php?nom=$nom&id=$id&cat=$idcat&img=$imgNom'>"; ?>
+                                            <input type='submit' class='btn btn-default btn-send' value='Supprimer Image'>
                                             
                                         <?php echo "</a>"; ?>
                                     </div>
@@ -85,14 +90,15 @@
                                     </p>
                                 </div>
                                 <div class="col-md-6">
-                                    <div id="edit">
                                         <?php echo  "<a href='editForm.php?nom=$nom&id=$id&cat=$idcat'>"; ?>
                                             <input type='submit' class='btn btn-default btn-send' value='Editer'>
+                                            <?php echo "</a>"; ?>
+                                        <?php echo  "<a href='deleteRecipe.php?nom=$nom&id=$id&cat=$idcat'>"; ?>
+                                            <input type='submit' class='btn btn-default btn-send' value='Supprimer'>
                                             <?php echo "</a>"; ?>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </section>
                 <?php include 'footer.php'; ?>
