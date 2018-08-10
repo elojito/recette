@@ -33,7 +33,7 @@
                         <div class="col-md-offset-3 col-md-6">
                             <div class="block">
                                 <div class="contact-form" style="margin-top:-4em;">
-                                    <form id="contact-form" role="form" method="post" action="edit.php" enctype="multipart/form-data">
+                                    <form id="contact-form" role="form" method="post" action=<?php echo "'edit.php?nom=$nom&id=$id&cat=$idcat'" ?> enctype="multipart/form-data">
                                         <div class="form-group">
                                             <input type="text" value="<?php echo ucwords($nom) ?>" class="form-control" name="nomFiche" id="nomFiche" readonly> </div>
                                         <div class="form-group">
@@ -67,7 +67,7 @@
                                                     $resultat = $connexion->query($requete);
                                                     $liste = $resultat->fetchAll(PDO::FETCH_OBJ);
                                                     foreach ($liste as $element){
-                                                        $descriptif = trim($element->descriptif);} 
+                                                        $descriptif = $element->descriptif;} 
                                            ?>                                           
                                             <input class="form-control" id="descriptif" name="descriptif" value="<?php echo $descriptif; ?>" /> </div>
                                         <div class="row">
@@ -78,7 +78,7 @@
                                                     $resultat = $connexion->query($requete);
                                                     $liste = $resultat->fetchAll(PDO::FETCH_OBJ);
                                                     foreach ($liste as $element){
-                                                        echo trim($element->ing);} ?>
+                                                        echo $element->ing;} ?>
                                                 </textarea>
                                             </div>
                                         </div>    
@@ -90,7 +90,7 @@
                                                     $resultat = $connexion->query($requete);
                                                     $liste = $resultat->fetchAll(PDO::FETCH_OBJ);
                                                     foreach ($liste as $element){
-                                                        echo trim($element->modop);} ?>
+                                                        echo $element->modop;} ?>
                                                 </textarea>
                                             </div>
                                         </div>

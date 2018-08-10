@@ -113,7 +113,7 @@ $imgAdress=$_FILES['upimg']['tmp_name'];
     while($row = $requete->fetch(PDO::FETCH_OBJ)){
     $idImg= $row->idImage;
     }
-            //update fiche avec nouvel id image
+            //update fiche avec nouvel  image
         $requete = $connexion->prepare("UPDATE fiche SET imageFiche = :idImage WHERE nomFiche = :nomFiche");
         $requete->bindPAram(':idImage', $idImg);
         $requete->bindParam(':nomFiche', $nom);
@@ -136,7 +136,7 @@ else{
     ?>
     <script type="text/javascript">
         alert ("Image modifiée");
-        window.setTimeout("location=(<?php echo  "'recette.php?nom=$nom&id=$id&cat=$idcat'"; ?>)",1000)</script>;
+        window.setTimeout("location=(<?php echo  "'recette.php?nom=$nom&id=$id&cat=$idcat'"; ?>)",1000)</script>
     <?php exit; }
     }}
     

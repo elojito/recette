@@ -33,9 +33,7 @@
                     }
                    
                    echo "<div class='overlay'>
-                            <div class='buttons'>
-                                <a rel='gallery' class='fancybox' href='recette.php?id=$id&nom=$nom&cat=$idcat' style='margin-left: 45%;'>".ucwords($nom)."</a>
-                            </div>
+                            <a rel='gallery' href='recette.php?id=$id&nom=$nom&cat=$idcat'>".ucwords($nom)."</a>
                         </div>
                     </div>
                     

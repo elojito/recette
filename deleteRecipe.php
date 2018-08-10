@@ -2,7 +2,8 @@
 
  $id = $_GET["id"];
  $nom = $_GET["nom"]; 
-$idcat = $_GET["cat"]; 
+$cat = $_GET["cat"];
+$idCat = $cat;
 
     $requete = $connexion->prepare("DELETE FROM fiche WHERE idFiche = :id");
     $requete->bindParam(':id', $id);
@@ -24,8 +25,26 @@ if(!$resultat){
 else{
     ?>
     <script type="text/javascript">
-        alert ("Recette supprimée");
-        window.setTimeout(("location='index.php'"),1000);</script>;
+        alert ("Recette supprimée");</script>
+            <?php 
+     // REDIRECTION TYPE RECETTE
+    
+    
+    switch($idCat){
+        case 1: $redirection="sucrees.php";
+            break;
+        case 2: $redirection="salees.php";
+            break;
+        case 3: $redirection="diycos.php";
+            break;
+        case 4: $redirection="diyhome.php";
+            break;
+        default : $redirection="index.php";
+            break;
+            
+    } 
+     ?>
+      <script type="text/javascript"> window.setTimeout("location=('<?php echo $redirection; ?>')",1000)</script>
     <?php exit; }
  
 ?>

@@ -141,6 +141,26 @@ if(!$resultat){
 else{?>
     <script type="text/javascript">
         alert ("Recette ajoutée");
-       window.setTimeout("location=('formRecette.php')",1000)</script>;
+</script>
+       
+        <?php 
+     // REDIRECTION TYPE RECETTE
+    
+    
+    switch($idCat){
+        case 1: $redirection="sucrees.php";
+            break;
+        case 2: $redirection="salees.php";
+            break;
+        case 3: $redirection="diycos.php";
+            break;
+        case 4: $redirection="diyhome.php";
+            break;
+        default : $redirection="index.php";
+            break;
+            
+    } 
+     ?>
+      <script type="text/javascript"> window.setTimeout("location=('<?php echo $redirection; ?>')",1000)</script>
     <?php exit; }
 ?>
