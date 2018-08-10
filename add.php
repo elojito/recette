@@ -31,7 +31,7 @@ $img = $_FILES['upimg']['name'];
 $resultat = $requete->execute();
 $row = $requete->fetch(PDO::FETCH_ASSOC);
   
-//Si la fiche recette existe déjà 
+//Si l'image existe déjà 
 if($row['idImage'] !=0){
     echo "Cette image existe déjà\n";
 }

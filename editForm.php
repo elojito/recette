@@ -34,7 +34,7 @@
                                 <div class="contact-form" style="margin-top:-4em;">
                                     <form id="contact-form" role="form" method="post" action="edit.php" enctype="multipart/form-data">
                                         <div class="form-group">
-                                            <input type="text" placeholder="<?php echo ucwords($nom) ?>" class="form-control" name="nomFiche" id="nomFiche" readonly> </div>
+                                            <input type="text" value="<?php echo ucwords($nom) ?>" class="form-control" name="nomFiche" id="nomFiche" readonly> </div>
                                         <div class="form-group">
                                             <select class="form-control" id="cat" name="cat">
                                                 <option selected="selected"> Catégorie </option>
@@ -59,7 +59,7 @@
                                                     foreach ($liste as $element){
                                                         $descriptif = trim($element->descriptif);} 
                                            ?>                                           
-                                            <input class="form-control" id="descriptif" name="descriptif" placeholder="<?php echo $descriptif; ?>" /> </div>
+                                            <input class="form-control" id="descriptif" name="descriptif" value="<?php echo $descriptif; ?>" /> </div>
                                         <div class="row">
                                             <div class="form-group">
                                                 <textarea class="form-control" id="ing" name="ing" placeholder="Ingrédients" rows="6">

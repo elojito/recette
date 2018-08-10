@@ -50,7 +50,14 @@
                                     }
                                     echo "<img src='ups/".$imgNom."' class='img-responsive' alt='' >";
                                 }
-                                ?> </div>
+                                ?>
+                                    <div id="editImage">
+                                        <?php echo  "<a href='editImg.php?nom=$nom&id=$id'>"; ?>
+                                            <input type='submit' class='btn btn-default btn-send' value='Editer Image'>
+                                            
+                                        <?php echo "</a>"; ?>
+                                    </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="block">
                                     <h3 class="subtitle">Ingrédients</h3>
@@ -78,9 +85,9 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div id="edit">
-                                      <?php echo  "<a href='editForm.php?nom=$nom&id=$id'>"; ?>
-                                           <input type='submit' id='contact-submit' class='btn btn-default btn-send' value='Editer'>
-                                      <?php echo "</a>"; ?>
+                                        <?php echo  "<a href='editForm.php?nom=$nom&id=$id'>"; ?>
+                                            <input type='submit' class='btn btn-default btn-send' value='Editer'>
+                                            <?php echo "</a>"; ?>
                                     </div>
                                 </div>
                             </div>
