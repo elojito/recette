@@ -136,7 +136,7 @@ else{
     ?>
     <script type="text/javascript">
         alert ("Image modifiée");
-        window.setTimeout("location=(<?php echo  "'recette.php?nom=$nom&id=$id&cat=$idcat'"; ?>);",1000)</script>;
+        window.setTimeout("location=(<?php echo  "'recette.php?nom=$nom&id=$id&cat=$idcat'"; ?>)",1000)</script>;
     <?php exit; }
     }}
     

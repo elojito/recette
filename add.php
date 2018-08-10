@@ -32,9 +32,16 @@ $resultat = $requete->execute();
 $row = $requete->fetch(PDO::FETCH_ASSOC);
   
 //Si l'image existe déjà 
-if($row['idImage'] !=0){
-    echo "Cette image existe déjà\n";
-}
+     if($row !== NULL){ 
+    //récupère id
+    $requete = $connexion->prepare("SELECT idImage FROM image WHERE nom = :nomI");
+    $requete->bindParam(':nomI', $img);
+    $resultat = $requete->execute();
+    while($row = $requete->fetch(PDO::FETCH_OBJ)){
+    $idImg= $row->idImage;
+    }
+     }
+         
 else{
 $requete = $connexion->prepare("INSERT INTO image (nom, size) VALUES (:nomI, :size)");
     $requete->bindParam(':nomI', $img);
@@ -75,17 +82,18 @@ $row = $requete->fetch(PDO::FETCH_ASSOC);
   
 //Si la fiche recette existe déjà 
 if($row['idFiche'] !=0){
-    echo "Cette recette existe déjà\n";
-}
+?><script>alert("Cette recette existe déjà");
+window.setTimeout("location=('formRecette.php')",1000)</script>
+<?php exit;}
 //si elle n'existe pas on la crée et on récupère l'id
 //insert
 else{
     $requete = $connexion->prepare("INSERT INTO fiche (nomFiche, descriptif, ing, catFiche, modop, imageFiche) VALUES (:nomFiche, :descriptif, :ing, :catFiche, :modop, :imageFiche)");
     $requete->bindParam(':nomFiche', $nomFiche);
-    $requete->bindParam(':descriptif', trim($descriptif));
-    $requete->bindParam(':ing', trim($ing));
+    $requete->bindParam(':descriptif', $descriptif);
+    $requete->bindParam(':ing', $ing);
     $requete->bindParam(':catFiche', $idCat);
-    $requete->bindParam(':modop', trim($modop));
+    $requete->bindParam(':modop', $modop);
     $requete->bindParam(':imageFiche', $idImg); 
     
     $nomFiche = $_POST["nomFiche"];
@@ -130,10 +138,9 @@ if(!$resultat){
     echo "\nPDO::errorInfo(): <br>";
     print_r($requete->errorInfo());
 }
-else{
-    ?>
+else{?>
     <script type="text/javascript">
         alert ("Recette ajoutée");
-        window.setTimeout("location=('index.php');",1000)</script>;
+       window.setTimeout("location=('formRecette.php')",1000)</script>;
     <?php exit; }
 ?>
